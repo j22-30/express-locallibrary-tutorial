@@ -5,9 +5,9 @@ block content
 
   form(method='POST')
     div.form-group
-      label(for='book') Book:
+      label(for='book') 本:
       select#book.form-control(name='book' required)
-        option(value='') --Please select a book--
+        option(value='') --本を選択してください--
         for book in book_list
           if selected_book==book._id.toString()
             option(value=book._id, selected) #{book.title}
@@ -15,23 +15,23 @@ block content
             option(value=book._id) #{book.title}
 
     div.form-group
-      label(for='imprint') Imprint:
-      input#imprint.form-control(type='text' placeholder='Publisher and date information' name='imprint' required value=(undefined===bookinstance ? '' : bookinstance.imprint) )
+      label(for='imprint') 出版情報:
+      input#imprint.form-control(type='text' placeholder='出版社と日付情報' name='imprint' required value=(undefined===bookinstance ? '' : bookinstance.imprint) )
     div.form-group
-      label(for='due_back') Date when book available:
+      label(for='due_back') 本が利用可能な日付:
       input#due_back.form-control(type='date' name='due_back' value=(undefined===bookinstance ? '' : bookinstance.due_back_yyyy_mm_dd))
 
     div.form-group
-      label(for='status') Status:
+      label(for='status') 状態:
       select#status.form-control(name='status' required)
-        option(value='') --Please select a status--
+        option(value='') --状態を選択してください--
         each val in ['Maintenance', 'Available', 'Loaned', 'Reserved']
           if undefined===bookinstance || bookinstance.status!=val 
             option(value=val)= val
           else
             option(value=val selected)= val
 
-    button.btn.btn-primary(type='submit') Submit
+    button.btn.btn-primary(type='submit') 送信
 
   if errors
     ul

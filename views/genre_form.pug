@@ -6,9 +6,9 @@ block content
 
   form(method='POST')
     div.form-group
-      label(for='name') Genre:
-      input#name.form-control(type='text', placeholder='Fantasy, Poetry etc.' name='name' required value=(undefined===genre ? '' : genre.name) )
-    button.btn.btn-primary(type='submit') Submit
+      label(for='name') ジャンル:
+      input#name.form-control(type='text', placeholder='ファンタジー、詩 など' name='name' required value=(undefined===genre ? '' : genre.name) )
+    button.btn.btn-primary(type='submit') 送信
 
   if errors
     ul

@@ -1,40 +1,40 @@
 extends layout
 
 block content
-  h1 Title: !{book.title}
+  h1 タイトル: !{book.title}
 
-  p #[strong Author: ]
+  p #[strong 著者: ]
     a(href=book.author.url) #{book.author.name}
-  p #[strong Summary:] !{book.summary}
+  p #[strong 概要:] !{book.summary}
   p #[strong ISBN:] #{book.isbn}
-  p #[strong Genre: ]
+  p #[strong ジャンル: ]
     each val, index in book.genre
       a(href=val.url) #{val.name}
       if index < book.genre.length - 1
         |,&nbsp;
 
   div(style='margin-left:20px;margin-top:20px')
-    h2(style='font-size: 1.5rem;') Copies
+    h2(style='font-size: 1.5rem;') 蔵書
 
     each val in book_instances
       hr
       if val.status=='Available'
-        p.text-success #{val.status}
+        p.text-success 利用可能
       else if val.status=='Maintenance'
-        p.text-danger #{val.status}
+        p.text-danger メンテナンス中
       else
         p.text-warning #{val.status}
-      p #[strong Imprint:] #{val.imprint}
+      p #[strong 出版情報:] #{val.imprint}
       if val.status!='Available'
-        p #[strong Due back:] #{val.due_back}
-      p #[strong Id: ]
+        p #[strong 返却予定日:] #{val.due_back}
+      p #[strong ID: ]
         a(href=val.url) #{val._id}
 
     else
-      p There are no copies of this book in the library.
+      p この本の蔵書はありません。
 
   hr
   p
-    a(href=book.url+'/delete') Delete Book
+    a(href=book.url+'/delete') 本を削除
   p
-    a(href=book.url+'/update') Update Book
+    a(href=book.url+'/update') 本を更新

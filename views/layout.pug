@@ -1,5 +1,5 @@
 doctype html
-html(lang='en')
+html(lang='ja')
   head
     title= title
     meta(charset='utf-8')
@@ -15,25 +15,25 @@ html(lang='en')
           block sidebar
             ul(class='sidebar-nav')
               li
-                a(href='/catalog') Home
+                a(href='/catalog') ホーム
               li
-                a(href='/catalog/books') All books
+                a(href='/catalog/books') すべての本
               li
-                a(href='/catalog/authors') All authors
+                a(href='/catalog/authors') すべての著者
               li
-                a(href='/catalog/genres') All genres
+                a(href='/catalog/genres') すべてのジャンル
               li
-                a(href='/catalog/bookinstances') All book-instances
+                a(href='/catalog/bookinstances') すべての蔵書
               li
                 hr
               li
-                a(href='/catalog/author/create') Create new author
+                a(href='/catalog/author/create') 新しい著者を作成
               li
-                a(href='/catalog/genre/create') Create new genre
+                a(href='/catalog/genre/create') 新しいジャンルを作成
               li
-                a(href='/catalog/book/create') Create new book
+                a(href='/catalog/book/create') 新しい本を作成
               li
-                a(href='/catalog/bookinstance/create') Create new book instance (copy)
+                a(href='/catalog/bookinstance/create') 新しい蔵書（コピー）を作成
 
         div(class='col-sm-10')
           block content
